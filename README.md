@@ -15,9 +15,9 @@ A multi-step React form app built with Vite, Material UI, and OpenAI integration
 2. **Add your OpenAI API Key:**
 
    - In a `.env` file in the project root.
-   - Add  `YOUR_OPENAI_API_KEY` at ADD-YOUR-OPENAI-API-KEY
+   - Add  `YOUR_OPENAI_API_KEY` at YOUR-OPENAI-API-KEY
      
-     REACT_APP_OPENAI_API_KEY=ADD-YOUR-OPENAI-API-KEY     
+     REACT_APP_OPENAI_API_KEY=YOUR-OPENAI-API-KEY     
      ⚠️ Note: .env files should typically not be pushed to version control because they may contain sensitive information.
      However, for testing purposes, I pushed .env file (with no secrets included)**
      
