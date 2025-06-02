@@ -87,7 +87,6 @@ const FamilyAndFinancialInfo = () => {
 
   return (
     <Box sx={{ display: "flex", flexWrap: "wrap" }}>
-      {/* Select fields */}
       {selectFields.map(renderSelect)}
       <Controller
         name="dependents"
