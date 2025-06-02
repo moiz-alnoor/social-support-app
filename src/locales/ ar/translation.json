@@ -14,7 +14,7 @@
   "requiredCountry": "الدولة مطلوبة",
   "requiredName": "الاسم مطلوب",
   "requiredID": " رقم الهوية الإماراتية مطلوب",
-  "invalidID": "يرجى إدخال رقم الهوية الإماراتية صالح (مثال: 784-XXXX-XXXXXXX-X)",
+  "invalidID": "يرجى إدخال رقم الهوية الإماراتية صالح (مثال: \u200E784-XXXX-XXXXXXX-X)",
   "requiredGender": "الجنس مطلوب",
   "requiredDOB": "تاريخ الميلاد مطلوب",
   "requiredEmail": "البريد الإلكتروني مطلوب",
@@ -73,5 +73,7 @@
   "reset": " إعادة ",
   "next": " التالي",
   "finish": " إنهاء",
-  "back": "  رجوع"
+  "back": "  رجوع",
+  "openaierror":"حدث خطأ ما في واجهة OpenAI API. يرجى مراجعة ملف README.md بخصوص مفتاح OpenAI أو المحاولة لاحقًا."
+
 }

@@ -48,7 +48,7 @@ const selectFields = [
   },
 ];
 
-const FamilyFinancialInfo = () => {
+const FamilyAndFinancialInfo = () => {
   const { control } = useFormContextData();
   const { t } = useTranslation();
   const rules = familyFinancialValidationRules(t);
@@ -125,4 +125,4 @@ const FamilyFinancialInfo = () => {
   );
 };
 
-export default FamilyFinancialInfo;
+export default FamilyAndFinancialInfo;

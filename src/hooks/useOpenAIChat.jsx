@@ -32,7 +32,7 @@ export const useOpenAIChat = () => {
       setResponse(reply);
       return reply;
     } catch (err) {
-      setError("Something went wrong with the OpenAI API.");
+      setError("openaierror");
     } finally {
       setLoading(false);
     }

@@ -9,8 +9,8 @@
  *
  * Dependencies:
  * - PersonalInformation
- * - FamilyFinancialInfo
- * - SituationDescriptions
+ * - FamilyAndFinancialInfo
+ * - FinancialSituationDescriptions
  * - FormContext (for shared state)
  */
 
@@ -22,12 +22,11 @@ import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import PersonalInformation from "../components/from/PersonalInformation";
-import FamilyFinancialInfo from "../components/from/FamilyFinancialInformation";
-import SituationDescriptions from "../components/from/SituationDescriptions";
+import FamilyAndFinancialInfo from "../components/from/FamilyAndFinancialInformation";
+import FinancialSituationDescriptions from "../components/from/FinancialSituationDescriptions";
 import { useTranslation } from "react-i18next";
 import { useFormContextData } from "../components/context/FormContext";
 import certificationImg from "/assets/certificate.png";
-import Loader from "../components/loader";
 
 const steps = [
   "personal_information",
@@ -67,8 +66,6 @@ const HorizontalStepper = () => {
   const { handleSubmit, trigger, getValues } = useFormContextData();
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
-  const [loading, setLoading] = useState(false);
-  const [color, setColor] = useState("#2A76D2");
 
   const isStepOptional = (step) => {
     return step === 1;
@@ -82,7 +79,7 @@ const HorizontalStepper = () => {
     let isValid = true;
     switch (activeStep) {
       case 0:
-      //  isValid = await trigger(personalInfoFields);
+        isValid = await trigger(personalInfoFields);
         break;
       case 1:
         isValid = await trigger(familyFinancialFields);
@@ -133,11 +130,9 @@ const HorizontalStepper = () => {
       case 0:
         return <PersonalInformation />;
       case 1:
-        return <FamilyFinancialInfo />;
-      case 2: {
-        loading;
-        return <SituationDescriptions />;
-      }
+        return <FamilyAndFinancialInfo />;
+      case 2:
+        return <FinancialSituationDescriptions />;
       default:
         return null;
     }

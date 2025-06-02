@@ -1,12 +1,17 @@
 import { useState } from "react";
-import { TextField, Box, Button, Stack } from "@mui/material";
+import { TextField, Box, Button, Alert, Stack } from "@mui/material";
+import IconButton from '@mui/material/IconButton';
+import Collapse from '@mui/material/Collapse';
+
 import { useOpenAIChat } from "../../hooks/useOpenAIChat";
 import { Controller } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useFormContextData } from "../context/FormContext";
+import { situationValidationRules } from "../../helpers/formValidation";
+
+import CloseIcon from '@mui/icons-material/Close';
 import FormDialog from "./DialogBox";
 import Loader from "../loader";
-import { situationValidationRules } from "../../helpers/formValidation";
 
 const fields = [
   {
@@ -29,27 +34,33 @@ const fields = [
   },
 ];
 
-const SituationDescriptions = () => {
+const FinancialSituationDescriptions = () => {
+  
   const { t } = useTranslation();
   const rules = situationValidationRules(t);
   const { control, setValue } = useFormContextData();
   const [dialogOpen, setDialogOpen] = useState(false);
   const [activeField, setActiveField] = useState(null);
   const [suggestion, setSuggestion] = useState("");
-  const [loading, setLoading] = useState(false);
   const [color, setColor] = useState("#2A76D2");
   const [label, setLabel] = useState("");
-  const { generateResponse } = useOpenAIChat();
+  const [open, setOpen] = useState(true);
+  const [apiHasError, setApiHasError] = useState(false);
+  const { generateResponse , loading, error} = useOpenAIChat();
 
   const handleHelpMeWrite = async (field) => {
-    setLoading(true);
     setActiveField(field.name);
+    setApiHasError(false);
     const generated = await generateResponse(t(field.helpText));
     if (generated) {
       setSuggestion(generated);
       setLabel(field.label);
       setDialogOpen(true);
-      setLoading(false);
+   
+    } else {
+      console.log(generated)
+      setApiHasError(true);
+      setOpen(true);
     }
   };
 
@@ -99,8 +110,31 @@ const SituationDescriptions = () => {
   );
 
   return (
-    <>
+    <Box>
       <Loader color={color} loading={loading} size={50} />
+      { apiHasError ? <Box sx={{ width: '100%' }}>
+      <Collapse in={open}>
+        <Alert severity="error"
+          action={
+            <IconButton
+              aria-label="close"
+              color="inherit"
+              size="small"
+              onClick={() => {
+                setApiHasError(false);
+                setOpen(false);
+              }}
+            >
+              <CloseIcon fontSize="inherit" />
+            </IconButton>
+          }
+          sx={{ mb: 2 }}
+        >
+          {t(error)}
+        </Alert>
+      </Collapse>
+      </Box> : null }
+
       <FormDialog
         open={dialogOpen}
         onClose={handleCloseDialog}
@@ -111,8 +145,8 @@ const SituationDescriptions = () => {
       <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
         {fields.map(renderField)}
       </Box>
-    </>
+    </Box>
   );
 };
 
-export default SituationDescriptions;
+export default FinancialSituationDescriptions;

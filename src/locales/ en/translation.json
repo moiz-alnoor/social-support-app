@@ -74,5 +74,7 @@
   "reset": "Reset",
   "next": "Next",
   "finish": "Finish",
-  "back": "Back"
+  "back": "Back",
+  "openaierror":"Something went wrong with the OpenAI API. Check README.md file regarding OpenAI key or try again later."
+
 }
