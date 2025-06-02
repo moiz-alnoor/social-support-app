@@ -4,6 +4,12 @@ A multi-step React form app built with Vite, Material UI, and OpenAI integration
 
 ---
 
+## 📖 Architecture
+
+For a detailed overview of the project structure, design decisions, and suggestions for future improvements, please read the [ARCHITECTURE.md](ARCHITECTURE.md) file in the project root.
+
+---
+
 ## 🚀 How to Run the Project
 
 1. **Install dependencies:**
@@ -42,6 +48,24 @@ A multi-step React form app built with Vite, Material UI, and OpenAI integration
 - Get your API key from [OpenAI Dashboard](https://platform.openai.com/account/api-keys).
 - Place your key in the `.env` file as shown above.
 - **Never commit your API key to version control.**
+
+---
+
+## 🧪 How to Run Tests
+
+If you have tests set up in this project, you can run them with:
+
+```bash
+npm test
+```
+
+or
+
+```bash
+npx jest
+```
+
+If you haven't set up tests yet, you can add Jest as a testing framework. See their documentation for setup instructions for React-Vite.
 
 ---
 
