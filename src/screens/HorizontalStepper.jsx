@@ -67,10 +67,6 @@ const HorizontalStepper = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [skipped, setSkipped] = useState(new Set());
 
-  const isStepOptional = (step) => {
-    return step === 1;
-  };
-
   const isStepSkipped = (step) => {
     return skipped.has(step);
   };
@@ -180,7 +176,7 @@ const HorizontalStepper = () => {
 
           <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
             <Box sx={{ flex: "1 1 auto" }} />
-            <Button onClick={handleReset}>{t("reset")}</Button>
+            <Button onClick={handleReset}>{t("back")}</Button>
           </Box>
         </>
       ) : (
