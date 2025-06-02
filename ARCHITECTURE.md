@@ -13,8 +13,8 @@
 Located in `src/component/`, this folder holds atomic and modular components used across form steps:
 
 * `PersonalInformation.jsx` – Step 1: Collects user details.
-* `FamilyFinancialInfo.jsx` – Step 2: Financial and family status.
-* `SituationDescriptions.jsx` – Step 3: Descriptive input.
+* `FamilyAndFinancialInfo.jsx` – Step 2: Financial and family status.
+* `FinancialSituationDescriptions.jsx` – Step 3: Descriptive input.
 * `FormDialog.jsx` – Dialog/modal for AI writing help and user editing.
 * `FormContext.jsx` – Shared context provider for form data and validation.
 * `HorizontalStepper.jsx` – Orchestrates form steps and navigation.
