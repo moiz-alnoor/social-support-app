@@ -61,9 +61,9 @@
   "helpMeWriteCricumstances": "Help write the employment circumstances",
   "helpMeWriteReason": "Help write reason for apply",
   "helpText": {
-    "currentFinancialSituation": "As I am facing financial issues and requesting financial assistance, help me describe my current financial situation in  8 lines.",
-    "employmentCircumstances": "As I am facing financial issues and requesting financial assistance, help me describe my employment circumstances as I am having issues in employment in  8 lines.",
-    "reasonForApplying": "As I am facing financial issues and requesting financial assistance, help me to write some reasons that justify my request in  8 lines."
+    "currentFinancialSituation": "As I am facing financial issues and requesting financial assistance, help me describe my current financial situation in 150 words.",
+    "employmentCircumstances": "As I am facing financial issues and requesting financial assistance, help me describe my employment circumstances as I am having issues in employment in 150 words.",
+    "reasonForApplying": "As I am facing financial issues and requesting financial assistance, help me to write some reasons that justify my request in 150 words."
   },
   "feelFreeToEdit": "Feel free to edit as needed.",
   "typing": "Typing...",

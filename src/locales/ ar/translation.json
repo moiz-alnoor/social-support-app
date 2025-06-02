@@ -60,9 +60,9 @@
   "helpMeWriteCricumstances": " ساعدني في كتابة ظروف العمل",
   "helpMeWriteReason": " ساعدني في كتابة سبب التقديم",
   "helpText": {
-    "currentFinancialSituation": "As I am facing financial issues and requesting financial assistance, help me describe my current financial situation in 8 lines. in arabic",
-    "employmentCircumstances": "As I am facing financial issues and requesting financial assistance, help me describe my employment circumstances as I am having issues in employment, in 8 lines. in arabic",
-    "reasonForApplying": "As I am facing financial issues and requesting financial assistance, help me to write some reasons that justify my request in 8 lines. in arabic"
+    "currentFinancialSituation": "As I am facing financial issues and requesting financial assistance, help me describe my current financial situation in 150 words. in arabic",
+    "employmentCircumstances": "As I am facing financial issues and requesting financial assistance, help me describe my employment circumstances as I am having issues in employment in 150 words. in arabic",
+    "reasonForApplying": "As I am facing financial issues and requesting financial assistance, help me to write some reasons that justify my request in 150 words. in arabic"
   },
   "feelFreeToEdit": " يمكنك تعديل النص كما تشاء.",
   "typing": " جاري الكتابة ...",
